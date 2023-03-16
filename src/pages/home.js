@@ -16,7 +16,9 @@ const Home = () => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const response = await axios.get("https://yummy-server-gf9i.onrender.com/recipes");
+        const response = await axios.get(
+          "https://yummy-server-gf9i.onrender.com/recipes"
+        );
         setRecipes(response.data);
       } catch (error) {
         console.log(error);
@@ -62,6 +64,7 @@ const Home = () => {
     <div className="homeWrapper">
       <CreateRecipe setRecipes={setRecipes} />
       <div className="recipesWrapper">
+        {!recipes && <div className="loading">loading</div>}
         <h1>Recipes</h1>
         <ul>
           {recipes &&

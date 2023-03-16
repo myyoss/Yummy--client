@@ -26,7 +26,7 @@ const Navbar = () => {
         Create Recipe
       </Link>
       {!cookies.access_token ? (
-        <Link to="/auth">Login/Register</Link>
+        <Link to="/auth">Login</Link>
       ) : (
         <>
           <Link to="/savedRecipes">Saved Recipes</Link>
