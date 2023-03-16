@@ -69,7 +69,13 @@ const CreateRecipe = ({ setRecipes }) => {
       <h1>Create-Recipe</h1>
       <form onSubmit={handleSubmit} name="formSubmit">
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" onChange={handleOnChange} />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          onChange={handleOnChange}
+        />
         <label htmlFor="ingredients">Ingredients</label>
         {recipe.ingredients.map((ingredient, index) => (
           <input
@@ -77,6 +83,7 @@ const CreateRecipe = ({ setRecipes }) => {
             type="text"
             name="ingredients"
             value={ingredient}
+            required
             onChange={(event) => handleIngredientChange(event, index)}
           />
         ))}
@@ -91,6 +98,7 @@ const CreateRecipe = ({ setRecipes }) => {
         <textarea
           id="instructions"
           name="instructions"
+          required
           onChange={handleOnChange}
         />
         {/* <Editor
@@ -110,6 +118,7 @@ const CreateRecipe = ({ setRecipes }) => {
           type="text"
           id="imageUrl"
           name="imageUrl"
+          required
           onChange={handleOnChange}
         />
         <label htmlFor="cookingTime">Cooking Time (minutes)</label>
@@ -117,6 +126,7 @@ const CreateRecipe = ({ setRecipes }) => {
           type="number"
           id="cookingTime"
           name="cookingTime"
+          required
           onChange={handleOnChange}
         />
         <button type="submit" className="submitBtn">
