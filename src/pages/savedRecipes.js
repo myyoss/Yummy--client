@@ -12,7 +12,7 @@ const SavedRecipes = () => {
     const getSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/${userID}`
+          `https://yummy-server-gf9i.onrender.com/recipes/savedRecipes/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (error) {
@@ -26,7 +26,7 @@ const SavedRecipes = () => {
   const deleteRecipe = async (recipeID) => {
     try {
       await axios.delete(
-        `http://localhost:3001/recipes/savedRecipes/${recipeID}`
+        `https://yummy-server-gf9i.onrender.com/recipes/savedRecipes/${recipeID}`
       );
       setSavedRecipes(savedRecipes);
     } catch (error) {

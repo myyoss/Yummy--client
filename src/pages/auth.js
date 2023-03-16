@@ -22,10 +22,13 @@ const Login = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/auth/login/", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://yummy-server-gf9i.onrender.com/auth/login/",
+        {
+          username,
+          password,
+        }
+      );
 
       if (
         response.data === "User Password Is Incorrect!" ||
@@ -61,10 +64,13 @@ const Register = ({ registered }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:3001/auth/register/", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://yummy-server-gf9i.onrender.com/auth/register/",
+        {
+          username,
+          password,
+        }
+      );
       alert("Registration Completed! Please Login");
     } catch (error) {
       console.log(error);

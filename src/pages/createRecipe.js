@@ -48,7 +48,7 @@ const CreateRecipe = ({ setRecipes }) => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3001/recipes",
+        "https://yummy-server-gf9i.onrender.com/recipes",
         { ...recipe },
         { headers: { authorization: cookies.access_token } }
       );
