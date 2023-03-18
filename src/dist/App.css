@@ -170,6 +170,13 @@ input {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
+.create-recipe form label {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  color: rgba(0, 0, 0, 0.634);
+}
 .create-recipe form button {
   background-color: #b1070794;
   border: 1px solid #e4baba7a;
