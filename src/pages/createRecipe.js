@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { Editor, editor } from "@tinymce/tinymce-react";
 
-
 const CreateRecipe = ({ setRecipes }) => {
   const userID = useGetUserID();
   const [cookies, _] = useCookies(["access_token"]);
-
+  const navigate = useNavigate();
   const initialState = {
     name: "",
     ingredients: [""],
@@ -19,7 +18,6 @@ const CreateRecipe = ({ setRecipes }) => {
     userOwner: userID,
   };
   const [recipe, setRecipe] = useState(initialState);
-
 
   const handleOnChange = (event) => {
     const { name, value } = event.target;
@@ -54,15 +52,14 @@ const CreateRecipe = ({ setRecipes }) => {
       );
       alert("Recipe Created!");
 
-      // navigate("/");
-      setRecipes();
+      navigate("/");
+      // setRecipes();
       setRecipe(initialState);
       document.forms["formSubmit"].reset();
     } catch (error) {
       console.log(error);
     }
   };
-
 
   return (
     <div className="create-recipe">
