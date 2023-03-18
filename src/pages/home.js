@@ -10,7 +10,7 @@ const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [cookies, _] = useCookies(["access_token"]);
-
+  const [loading, setLoading] = useState(true);
   const userID = useGetUserID();
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const Home = () => {
           "https://yummy-server-gf9i.onrender.com/recipes"
         );
         setRecipes(response.data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -64,8 +65,8 @@ const Home = () => {
     <div className="homeWrapper">
       <CreateRecipe setRecipes={setRecipes} />
       <div className="recipesWrapper">
-        {!recipes && <div className="loading">loading</div>}
         <h1>Recipes</h1>
+        {loading && <div className="loader">{loading}</div>}
         <ul>
           {recipes &&
             recipes.map((recipe) => (
