@@ -51,8 +51,8 @@ const CreateRecipe = ({ setRecipes }) => {
         { headers: { authorization: cookies.access_token } }
       );
       alert("Recipe Created!");
+      navigate("../", { replace: true });
 
-      navigate("/");
       // setRecipes();
       setRecipe(initialState);
       document.forms["formSubmit"].reset();
