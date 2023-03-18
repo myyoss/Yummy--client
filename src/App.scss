@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
-
 .App {
   display: flex;
   flex-direction: column;
@@ -8,7 +6,8 @@
 }
 
 body {
-  font-family: "Noto Serif";
+  font-family: sans-serif;
+  color: black;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +17,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  // background-color: #f2f2f2;
 }
 
 .auth-container {
@@ -127,11 +125,11 @@ input {
     width: 10%;
     display: flex;
     justify-content: center;
+    font-family: sans-serif;
+
   }
 
   a {
-    // background-color: #b1070794;
-    // border: 1px solid #e4baba7a;
     border-radius: 50px;
     color: #b1070794;
     text-decoration: none;
@@ -250,8 +248,6 @@ input {
   align-items: center;
   width: 60%;
 
-  // background-color: #796e6e;
-  // flex-wrap: nowrap;
   h1 {
     text-align: center;
     margin: 1rem;
@@ -286,7 +282,6 @@ li {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 1rem;
-  // width: 80%;
 }
 
 h2 {
@@ -313,7 +308,7 @@ p {
     display: block !important;
   }
 
-  .create-recipe,
+  .hideShowCreateRecipe,
   .homeNavbar {
     display: none !important;
 
@@ -321,21 +316,21 @@ p {
 
   .homeWrapper {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     width: 90%;
     margin: 0rem;
     padding: 0rem;
     margin-top: 0rem;
-    gap: 0rem;
+    gap: 1rem;
 
     .recipesWrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 90%;
-      // margin: 1rem;
     }
+
+    .create-recipe {}
   }
 
   .navbar {
@@ -386,19 +381,28 @@ p {
   border-top: 10px solid #b10707;
   width: 60px;
   height: 60px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
+  -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   display: flex;
   justify-content: first baseline;
 }
 
-/* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

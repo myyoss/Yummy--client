@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 .App {
   display: flex;
   flex-direction: column;
@@ -7,7 +6,8 @@
 }
 
 body {
-  font-family: "Noto Serif";
+  font-family: sans-serif;
+  color: black;
   margin: 0;
   padding: 0;
 }
@@ -116,6 +116,7 @@ input {
   width: 10%;
   display: flex;
   justify-content: center;
+  font-family: sans-serif;
 }
 .navbar a {
   border-radius: 50px;
@@ -276,20 +277,19 @@ p {
     display: block !important;
   }
 
-  .create-recipe,
+  .hideShowCreateRecipe,
 .homeNavbar {
     display: none !important;
   }
 
   .homeWrapper {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     width: 90%;
     margin: 0rem;
     padding: 0rem;
     margin-top: 0rem;
-    gap: 0rem;
+    gap: 1rem;
   }
   .homeWrapper .recipesWrapper {
     display: flex;
@@ -297,7 +297,6 @@ p {
     justify-content: center;
     width: 90%;
   }
-
   .navbar {
     width: 100%;
     justify-content: center;
@@ -342,13 +341,11 @@ p {
   width: 60px;
   height: 60px;
   -webkit-animation: spin 2s linear infinite;
-  /* Safari */
   animation: spin 2s linear infinite;
   display: flex;
   justify-content: first baseline;
 }
 
-/* Safari */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

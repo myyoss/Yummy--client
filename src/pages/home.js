@@ -63,7 +63,9 @@ const Home = () => {
 
   return (
     <div className="homeWrapper">
-      <CreateRecipe setRecipes={setRecipes} />
+      <div className="hideShowCreateRecipe">
+        <CreateRecipe setRecipes={setRecipes} />
+      </div>
       <div className="recipesWrapper">
         <h1>Recipes</h1>
         {loading && <div className="loader">{loading}</div>}
